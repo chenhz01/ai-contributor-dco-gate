@@ -4,6 +4,8 @@ A static checker that decides whether a commit message satisfies AI-contribution
 
 **Confidence: High (85%)** that the six message-level checks cover the attribution failure modes seen in practice; **Medium (60%)** that the default AI-identity regex list matches your team's naming conventions — tune `ai_identity_patterns` before trusting it [estimated].
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Since kernels and large projects began formally onboarding AI contributions — the Linux kernel README's role index, as of 2026-10-11, ships an "AI Coding Assistant" entry that points LLM-generated contributions at a coding-assistants document covering licensing, attribution and DCO duties — maintainers face a new review burden: is this commit signed off by the *human* who takes responsibility, and is AI involvement disclosed? Reviewing that by hand across hundreds of patches does not scale, and `git log` greps miss trailer subtleties (sign-off/author mismatch, AI identity signing itself).
